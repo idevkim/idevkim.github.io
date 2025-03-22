@@ -121,8 +121,8 @@ const invokeTopic = "/public/" + deviceId + "/invoke"
 //const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com"
 const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com/mqtt"
 const port = "8084"
-const clientId = "chrome"
-const username = "user"//"idevkim-chrome"
+const clientId = "chrome" //EMQX에서는 클라이언트ID가 같을경우 에러발생.
+const username = "user"   //EMQX에서는 같은 Auth로 로그인은 문제없음.
 const password = "user1234"
 const client = mqtt.connect(broker, {
   port,
@@ -145,29 +145,6 @@ function generateRadomId() {
   const randomPersonality = getRandomItem(personality);
   const randomAnimal = getRandomItem(animals);
   return `${randomAppearance}-${randomPersonality}-${randomAnimal}`;
-}
-
-function publish_timer() {
-  var sec = 30;
-  var timer = setInterval(function () {
-      
-    //발행. resultTopic
-    //////////////////////////////////////
-    // client.publish('webrtc/' + deviceId + '/jsonrpc', JSON.stringify({
-    client.publish(resultTopic, JSON.stringify({
-      jsonrpc: '2.0',
-      method: 'offer',
-      id: offerId,
-      sec: sec,
-    }), { qos: 2 })
-    //////////////////////////////////////
-    //document.getElementById('timer').innerHTML = '00:' + sec;
-    console.log('00:' + sec)
-    sec--;
-    if (sec < 0) {
-      clearInterval(timer);
-    }
-  }, 1000);
 }
 
 window.onload = function() {
