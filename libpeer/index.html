@@ -33,6 +33,14 @@
     <div class="mb-4">
       <div class="row mb-2">
         <div class="col-1">
+          <p class="h5 mb-0">Broker:</p>
+        </div>
+        <div class="col-11">
+          <p class="h5 mb-0" id="broker-url"></p>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-1">
           <p class="h5 mb-0">URL:</p>
         </div>
         <div class="col-7">
@@ -103,7 +111,7 @@ const invokeTopic = "/public/" + deviceId + "/invoke"
 //const broker = "mqtts://t5ed9f11.ala.dedicated.aws.emqxcloud.com"
 //const port = "8883"
 //const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com"
-const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com"
+const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com/mqtt"
 const port = "8084"
 const clientId = "chrome"
 const username = "idevkim-chrome"
@@ -162,6 +170,7 @@ window.onload = function() {
   } 
 
   //idevkim libpeer.com
+  document.getElementById("broker-url").innerHTML = broker
   document.getElementById("device-url").innerHTML = "mqtts://t5ed9f11.ala.dedicated.aws.emqxcloud.com/public/" + deviceId;
   const canvas = document.createElement('canvas')
   canvas.width = 640
