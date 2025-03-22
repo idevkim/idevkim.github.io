@@ -94,8 +94,20 @@ const deviceId = urlParams.get("id")
 const resultTopic = "/public/" + deviceId + "/result"
 const invokeTopic = "/public/" + deviceId + "/invoke"
 
-// const client  = mqtt.connect('wss://libpeer.com:8084/mqtt')
-const client  = mqtt.connect('wss://broker.emqx.io:8084/mqtt')
+//const client  = mqtt.connect('wss://libpeer.com:8084/mqtt')
+//const client  = mqtt.connect('wss://broker.emqx.io:8084/mqtt')
+//mqtts://t5ed9f11.ala.dedicated.aws.emqxcloud.com/public/
+const broker = "t5ed9f11.ala.dedicated.aws.emqxcloud.com"
+const port = "8883"
+const username = "idevkim-chrome"
+const password = "idevkim"
+const client = mqtt.connect(broker, {
+  port,
+  deviceId,
+  username,
+  password
+})
+
 
 function getRandomItem(array) {
   return array[Math.floor(Math.random() * array.length)];
