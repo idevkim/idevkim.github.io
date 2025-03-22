@@ -33,6 +33,14 @@
     <div class="mb-4">
       <div class="row mb-2">
         <div class="col-1">
+          <p class="h5 mb-0">Info:</p>
+        </div>
+        <div class="col-11">
+          <p class="h5 mb-0" id="info"></p>
+        </div>
+      </div> 
+      <div class="row mb-2">
+        <div class="col-1">
           <p class="h5 mb-0">Broker:</p>
         </div>
         <div class="col-11">
@@ -114,8 +122,8 @@ const invokeTopic = "/public/" + deviceId + "/invoke"
 const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com/mqtt"
 const port = "8084"
 const clientId = "chrome"
-const username = "user"//"idevkim-chrome"
-const password = "idevkim"
+const username = "esp32"//"idevkim-chrome"
+const password = "esp32"
 const client = mqtt.connect(broker, {
   port,
   clientId,
@@ -170,7 +178,8 @@ window.onload = function() {
   } 
 
   //idevkim libpeer.com
-  document.getElementById("broker-url").innerHTML = broker
+  document.getElementById("info").innerHTML = `clientId : ${clientId} // name : ${username} // pass : ${password}`
+  document.getElementById("broker-url").innerHTML = broker + " => port : "+port
   document.getElementById("device-url").innerHTML = "mqtts://t5ed9f11.ala.dedicated.aws.emqxcloud.com/public/" + deviceId;
   const canvas = document.createElement('canvas')
   canvas.width = 640
