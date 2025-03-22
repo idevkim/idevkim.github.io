@@ -99,11 +99,12 @@ const invokeTopic = "/public/" + deviceId + "/invoke"
 //mqtts://t5ed9f11.ala.dedicated.aws.emqxcloud.com/public/
 const broker = "t5ed9f11.ala.dedicated.aws.emqxcloud.com"
 const port = "8883"
+const clientId = deviceId
 const username = "idevkim-chrome"
 const password = "idevkim"
 const client = mqtt.connect(broker, {
   port,
-  deviceId,
+  clientId,
   username,
   password
 })
