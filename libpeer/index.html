@@ -275,7 +275,7 @@ pc.onicegatheringstatechange = () => {
 
   if (pc.iceGatheringState === "complete") {
     console.log(pc.localDescription.sdp)
-    client.publish(invokeTopic, JSON.stringify({
+    client.publish(pubtopic, JSON.stringify({
       jsonrpc: "2.0",
       method: "answer",
       params: pc.localDescription.sdp,
@@ -286,7 +286,7 @@ pc.onicegatheringstatechange = () => {
 
 client.on('connect', () => {
   console.log("connected")
-  client.subscribe(resultTopic, (err) => { })
+  client.subscribe(subtopic, (err) => { })
 
   //publish_timer()//2초간격으로 발행.
 })
@@ -308,7 +308,7 @@ document.getElementById("connect").addEventListener("click", () => {
     });
   }
 
-  client.publish(invokeTopic, JSON.stringify({
+  client.publish(pubtopic, JSON.stringify({
     jsonrpc: "2.0",
     method: "offer",
     id: offerId,
