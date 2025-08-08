@@ -123,18 +123,18 @@ const pubtopic = id + "/player"//player데이터를 발행
 //const broker = "mqtts://t5ed9f11.ala.dedicated.aws.emqxcloud.com"
 //const port = "8883"
 //const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com"
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com/mqtt"
 // const port = "8084"
 const broker = "mqtts://172.16.2.189"
 const port = "8883"
 
 const clientId = "chrome" //EMQX에서는 클라이언트ID가 같을경우 에러발생.
-=======
-const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com/mqtt"
-const port = "8084"
-const clientId = id+"-"+who //EMQX에서는 클라이언트ID가 같을경우 에러발생.
->>>>>>> 4a9400446e1382485d591b0f18061506520d3b4f
+// =======
+// const broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com/mqtt"
+// const port = "8084"
+// const clientId = id+"-"+who //EMQX에서는 클라이언트ID가 같을경우 에러발생.
+// >>>>>>> 4a9400446e1382485d591b0f18061506520d3b4f
 const username = "user"   //EMQX에서는 같은 Auth로 로그인은 문제없음.
 const password = "user1234"
 const client = mqtt.connect(broker, {
