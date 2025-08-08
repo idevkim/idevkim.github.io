@@ -1,5 +1,12 @@
 # idevkim.github.io
 
+```bash
+git status
+git add .
+git commit -m "[commit message]"
+git push -u origin main
+```
+
 [사이트 접속 https://idevkim.github.io](https://idevkim.github.io)
 
 ### t001 (https://idevkim.github.io/t001/?deviceId=kim12)
