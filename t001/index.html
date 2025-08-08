@@ -41,7 +41,7 @@
     var answerId = Math.floor((Math.random() * 1000) + 1);
     var closeId = Math.floor((Math.random() * 1000) + 1);
     
-    var brokerIdx = 3;
+    var brokerIdx = 4;
     var broker = ""
     var resultTopic = ""
     var invokeTopic = ""
@@ -60,6 +60,10 @@
       //broker = "mqtt://t5ed9f11.ala.dedicated.aws.emqxcloud.com:1883"
       broker = "wss://t5ed9f11.ala.dedicated.aws.emqxcloud.com:8084/mqtt"
       //broker = 'mqtt://t5ed9f11.ala.dedicated.aws.emqxcloud.com:1883'
+      resultTopic = "/public/" + deviceId + "/result"
+      invokeTopic = "/public/" + deviceId + "/invoke"
+    } else if(brokerIdx==4) {
+      broker = "mqtts://172.16.2.189:8883"
       resultTopic = "/public/" + deviceId + "/result"
       invokeTopic = "/public/" + deviceId + "/invoke"
     }
