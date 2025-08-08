@@ -2,9 +2,10 @@
 
 ```bash
 git status
+# 평시 업로드시
 git add .
 git commit -m "[commit message]"
-git push -u origin main
+git push (or git push -u origin main)
 ```
 
 [사이트 접속 https://idevkim.github.io](https://idevkim.github.io)
